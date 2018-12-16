@@ -124,7 +124,7 @@ contract DrugSupplyChain is Ownable{
 		/* Call Storage Contract */
 		bool status = supplyChainStorage.setDistributorInData(_batchNo, _receiveDate, _drugName, _quantity);
 
-		emit DoneFactorySend(msg.sender, _batchNo);
+		emit DoneDistributorIn(msg.sender, _batchNo);
 		return(status);
 	}
 
@@ -144,7 +144,7 @@ contract DrugSupplyChain is Ownable{
 		/* Call Storage Contract */
 		bool status = supplyChainStorage.setDistributorSendData(_batchNo, _sendDate, _drugStoreName, _quantity);
 
-		emit DoneFactorySend(msg.sender, _batchNo);
+		emit DoneDistributorSend(msg.sender, _batchNo);
 		return(status);
 	}
 
@@ -164,7 +164,7 @@ contract DrugSupplyChain is Ownable{
 		/* Call Storage Contract */
 		bool status = supplyChainStorage.setDrugStoreData(_batchNo, _receiveDate, _quantity, _additionalInfo);
 
-		emit DoneFactorySend(msg.sender, _batchNo);
+		emit DoneDrugStore(msg.sender, _batchNo);
 		return(status);
 	}
 
